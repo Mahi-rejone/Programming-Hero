@@ -5,9 +5,12 @@ const server = createServer((req : IncomingMessage,res : ServerResponse)=>{
     const method = req.method;
     if (url ==="/" && method === "GET"){
         console.log("This is root route");
+        res.writeHead(200, {"content-type" : "text/plain"})
+        res.end("this is the root route ")
     }
     else {
-        console.log("This route is not defiled")
+        res.writeHead(200, { "content-type": "text/plain" });
+        res.end("this is not the root route ");
     }
 });
 
